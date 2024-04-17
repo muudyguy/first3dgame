@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxi2hwhwxnu5s"]
+
+[ext_resource type="Script" path="res://Mob.cs" id="1_07h68"]
+[ext_resource type="PackedScene" uid="uid://bwudpheq0ib2r" path="res://art/mob.glb" id="1_sfs07"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k3s7e"]
+size = Vector3(1.87476, 1.18079, 2.08911)
+
+[node name="Mob" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_07h68")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="mob" parent="Pivot" instance=ExtResource("1_sfs07")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0492516, 0.0903931, -0.0684814)
+shape = SubResource("BoxShape3D_k3s7e")
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 11.81
